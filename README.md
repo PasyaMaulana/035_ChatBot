@@ -1,5 +1,5 @@
 # 035_ChatBot
-## Dashboard Vervel
+## Dashboard Vercel
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/17241ece-590a-4c84-8d80-72a74dbad79d" />
 
 ## Halaman ChatBot
