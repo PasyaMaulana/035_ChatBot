@@ -1,2 +1,2 @@
 const express = require("express")
-const dotenc = require("dotenv")
+const dotenv = require("dotenv")
