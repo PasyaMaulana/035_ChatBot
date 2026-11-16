@@ -4,6 +4,19 @@ const chatBox = document.getElementById("chat-box");
 
 const messages = [];
 
+// =========================
+// Fungsi render markdown sederhana
+// =========================
+function renderMarkdown(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/\n/g, "<br>");
+}
+
 function addMessage(text, sender) {
   const message = document.createElement("div");
   message.classList.add("message", sender);
@@ -95,8 +108,8 @@ chatForm.addEventListener("submit", async (event) => {
           const token = JSON.parse(data);
           // Tambahkan token
           botResponse += token;
-          // Update tampilan
-          botContent.textContent = botResponse;
+          // Update tampilan (render markdown)
+          botContent.innerHTML = renderMarkdown(botResponse);
           // Auto scroll
           chatBox.scrollTop = chatBox.scrollHeight;
         } catch (error) {
